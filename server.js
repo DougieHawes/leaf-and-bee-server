@@ -1,5 +1,7 @@
 // environment variables
-require("dotenv").config();
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const port = process.env.PORT;
 
@@ -12,8 +14,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send({ msg: "Leaf and Bee Gardens" });
+app.get("/api", (req, res) => {
+  res.send({ msg: "Hello World! from the server" });
 });
 
 app.listen(port, console.log(`app running on port:${port}`));
